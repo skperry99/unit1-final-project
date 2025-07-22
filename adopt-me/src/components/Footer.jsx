@@ -1,5 +1,8 @@
-export default function Footer() {
+function Footer() {
   return(
-    <small>Work Here</small>
-  )
+    <footer>
+      <p>&copy; {new Date().getFullYear()}</p>
+    </footer>
+  );
 }
+export default Footer
