@@ -1,25 +1,27 @@
 import React from "react";
-import { animalList } from "../helpers/animalList";
-import Card from "../components/Card";
+import { animals } from "../helpers/animals";
+import AvailableAnimal from "../components/AvailableAnimal";
 import "../styles/animals.css";
+import Main from "../components/Main";
 
 function AnimalsPage() {
-  animalList;
+  animals;
   return (
-    <div className="animals">
+    <div className="animalsPage">
       <h1 className="animalsTitle">Available Animals</h1>
-      <div className="animalCards">
-        {animalList.map((Card) => {
+      <Main />
+      {/* <div className="animalCards">
+        {animals.map((AvailableAnimal) => {
           return (
-            <Card
-              key={Card.id}
-              pic={Card.pic}
-              name={Card.name}
-              blurb={Card.blurb}
+            <AvailableAnimal
+              key={AvailableAnimal.id}
+              pic={AvailableAnimal.pic}
+              name={AvailableAnimal.name}
+              blurb={AvailableAnimal.blurb}
             />
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 }

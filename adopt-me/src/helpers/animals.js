@@ -11,7 +11,7 @@ import dog3 from "../assets/images/dog3.png";
 import dog4 from "../assets/images/dog4.jpg";
 import dog5 from "../assets/images/dog5.jpg";
 
-export const animalList = [
+export const animals = [
   {
     name: "Ralphie",
     image: gp2,

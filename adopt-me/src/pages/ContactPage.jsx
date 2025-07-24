@@ -3,12 +3,12 @@ import shelter from "../assets/images/shelter.jpg";
 
 function ContactPage() {
   return (
-    <div className="contact">
-      <h1>CONTACT US</h1>
+    <div className="contactPage">
+      <h1 className="contactTitle">CONTACT US</h1>
       <img src={shelter} width={350} height={350} alt="Bark Avenue building" />
       <div className="logistics">
         <p>
-          Address: 999 Doggone-It Street Anytown, NE 98765 Phone number: 555.123.4567
+          Address: 999 Doggone-It Street Anytown, NE 90210 Phone number: 555.867.5309
         </p>
 
         <p>

@@ -4,7 +4,7 @@ import banner from "../assets/images/banner-graphic.jpg";
 
 export default function HomePage() {
   return (
-    <div className="home">
+    <div className="homePage">
       <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />
       <p className="homeText">
         Welcome to Bark Avenue Rescue Kennel. This is a quirky, slightly

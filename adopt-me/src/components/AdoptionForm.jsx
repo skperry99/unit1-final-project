@@ -18,7 +18,7 @@ function AdoptionForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="adoptionForm" onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
       <input
         type="text"
