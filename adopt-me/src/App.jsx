@@ -8,12 +8,15 @@ import AdoptionFormPage from "./pages/AdoptionFormPage.jsx";
 import Careers from "./pages/Careers.jsx";
 import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar.jsx";
+import Header from "./components/Header.jsx";
+import banner from "./assets/images/banner-graphic.jpg";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <main>
+    <div className="layout">
+      <Router>
+        <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />{" "}
+        <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/AboutPage" element={<AboutPage />} />
@@ -22,9 +25,9 @@ function App() {
           <Route path="/AdoptionFormPage" element={<AdoptionFormPage />} />
           <Route path="/Careers" element={<Careers />} />
         </Routes>
-      </main>
-      <Footer />
-    </Router>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

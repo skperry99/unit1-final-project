@@ -1,4 +1,3 @@
-import "../styles/about.css";
 import shelter2 from "../assets/images/shelter2.jpg";
 
 function AboutPage() {

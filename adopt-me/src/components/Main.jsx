@@ -2,13 +2,19 @@ import AvailableAnimal from "./AvailableAnimal";
 import { animals } from "../helpers/animals";
 
 const Main = () => {
+  let allAnimals = animals.map((animal) => {
+    return (
+      <AvailableAnimal
+        key={animal.id}
+        image={animal.image}
+        name={animal.name}
+        blurb={animal.blurb}
+      />
+    );
+  });
   return (
     <main>
-      <div className="main">
-        <AvailableAnimal animal={animals[0]} />
-        <AvailableAnimal animal={animals[1]} />
-        <AvailableAnimal animal={animals[2]} />
-      </div>
+      <div className="animalsLayout">{allAnimals}</div>
     </main>
   );
 };

@@ -1,5 +1,3 @@
-import "../styles/header.css";
-
 const Header = ({ title, imageUrl }) => {
   return (
     <header className="header" style={{ backgroundImage: `url(${imageUrl})` }}>
