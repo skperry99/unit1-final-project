@@ -1,17 +1,12 @@
 import "../styles/about.css";
-import banner from "../assets/images/banner-graphic.jpg";
+import shelter2 from "../assets/images/shelter2.jpg";
 
 function AboutPage() {
   return (
     <div className="about">
-      <div className="aboutBanner" style={{ backgroundImage: `url(${banner})` }}></div>
+      <img src={shelter2} alt="Bark Avenue building" />
       <div className="aboutText">
         <h1>ABOUT US</h1>
-        <p>
-          Welcome to Bark Avenue Animal Shelter. This is a quirky, slightly
-          chaotic, yet undeniably loving haven for furry, scaly, and feathered
-          friends.
-        </p>
         <p>
           The shelter is home to a delightful mix of personalities. There's the
           "energetic enthusiast" who can outrun a cheetah, the "lap-loving
@@ -31,8 +26,8 @@ function AboutPage() {
           enduring a few "symphonies of protest" from Eddie. Ready to join the
           chaos and cuddles? If you're looking for a companion who will keep you
           entertained, occasionally challenge your sanity, and provide endless
-          love, you've come to the right place. Visit Bark Avenue Animal
-          Shelter, and find your purr-fectly imperfect match!
+          love, you've come to the right place. Visit Bark Avenue Rescue Kennel,
+          and find your purr-fectly imperfect match!
         </p>
       </div>
     </div>

@@ -1,7 +1,12 @@
-function Header() {
-  return(
-    <h1>Bark Avenue Animal Shelter</h1>
-  );
-}
+import "../styles/header.css"
 
-export default Header
+const Header = ({ title, imageUrl }) => {
+  return (
+    <header className="header" style={{ backgroundImage: `url(${imageUrl})` }}>
+      <h1 className="header-title">{title}</h1>
+    </header>
+  );
+};
+
+
+export default Header;
