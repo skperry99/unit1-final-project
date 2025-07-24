@@ -1,12 +1,14 @@
-import React from 'react';
-import '../styles/footer.css'
+import { Link } from "react-router-dom";
 
 function Footer() {
-  return(
-    <footer className='footer'>
-      <div>Careers</div>
-      <p className='copyright'>&copy; {new Date().getFullYear()}</p>
+  return (
+    <footer className="footer">
+      <div>
+        <Link to="/Careers">Careers</Link>
+        <Link to="/Volunteer">Volunteer</Link>
+      </div>
+      <p className="copyright">&copy; {new Date().getFullYear()} BARK</p>
     </footer>
   );
 }
-export default Footer
+export default Footer;

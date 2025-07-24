@@ -1,12 +1,11 @@
-import Header from "../components/Header";
-
-
 export default function HomePage() {
   return (
-    <>
-      <Header />
-
-      <h1>Home Page</h1>
-    </>
+    <div className="homePage">
+      <p className="homeText">
+        Welcome to Bark Avenue Rescue Kennel. This is a quirky, slightly
+        chaotic, yet undeniably loving haven for furry, scaly, and feathered
+        friends.
+      </p>
+    </div>
   );
 }

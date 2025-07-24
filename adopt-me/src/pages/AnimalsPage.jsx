@@ -1,8 +1,11 @@
+import Main from "../components/Main";
+
 function AnimalsPage() {
   return (
-    <>
-      <h1>Animals Page</h1>
-    </>
+    <div className="animalsPage">
+      <h1 className="animalsTitle">Available Animals</h1>
+      <Main />
+    </div>
   );
 }
 

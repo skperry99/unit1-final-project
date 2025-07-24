@@ -14,11 +14,11 @@ function AdoptionForm() {
       name: "",
       email: "",
     });
-    console.log = ("Submitted");
+    console.log = "Submitted";
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="adoptionForm" onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
       <input
         type="text"
