@@ -6,6 +6,7 @@ function Navbar() {
     <div className="navbar">
       <Link to="/"><button>Home</button></Link>
       <Link to="/AboutPage"><button>About</button></Link>
+      <Link to="/ContactPage"><button>Contact</button></Link>
       <Link to="/AnimalsPage"><button>Animals</button></Link>
     </div>
   );
