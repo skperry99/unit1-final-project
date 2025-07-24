@@ -1,11 +1,10 @@
-const AvailableAnimal = (props) => {
-  let { id, name, image, blurb } = props.animal;
+function AvailableAnimal(props) {
 
   return (
-    <div id={id} className="animalCard">
-      <img src={ image } width="150px" height="150px" alt={`${name} picture`} />
-      <h1> {name} </h1>
-      <p> {blurb} </p>
+    <div className="animalCard">
+      <img src={ props.image } width="150px" height="150px" alt={`${ props.name } picture`} />
+      <h2> { props.name } </h2>
+      <p> { props.blurb } </p>
     </div>
   );
 };

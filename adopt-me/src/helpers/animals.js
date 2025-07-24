@@ -4,7 +4,7 @@ import goat from "../assets/images/goat.jpg";
 import snake from "../assets/images/snake.png";
 import cat1 from "../assets/images/cat1.jpg";
 import cat3 from "../assets/images/cat3.jpg";
-import cat4 from "../assets/images/cat3.jpg";
+import cat4 from "../assets/images/cat4.jpg";
 import dog from "../assets/images/dog.jpg";
 import dog2 from "../assets/images/dog2.jpg";
 import dog3 from "../assets/images/dog3.png";
