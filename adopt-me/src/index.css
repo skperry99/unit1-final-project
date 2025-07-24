@@ -142,6 +142,19 @@ button {
   border-radius: 10px;
 }
 
+.form-group {
+        margin-bottom: 10px;
+    }
+    label {
+        display: inline-block;
+        width: 200px; /* Adjust as needed */
+        text-align: right; /* For right-aligned labels */
+        vertical-align: middle; /* Aligns text vertically with input */
+    }
+    input {
+        display: inline-block;
+        vertical-align: middle; /* Aligns input vertically with label */
+    }
 @media screen and (max-width: 850px) {
   #page-layout {
     width: 92vw;
