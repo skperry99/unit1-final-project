@@ -6,6 +6,7 @@ import AnimalsPage from "./pages/AnimalsPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import AdoptionFormPage from "./pages/AdoptionFormPage.jsx";
 import Careers from "./pages/Careers.jsx";
+import VolunteerPage from "./pages/VolunteerPage.jsx";
 import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Header from "./components/Header.jsx";
@@ -24,6 +25,7 @@ function App() {
           <Route path="/ContactPage" element={<ContactPage />} />
           <Route path="/AdoptionFormPage" element={<AdoptionFormPage />} />
           <Route path="/Careers" element={<Careers />} />
+          <Route path="/Volunteer" element={<VolunteerPage />} />
         </Routes>
         <Footer />
       </Router>

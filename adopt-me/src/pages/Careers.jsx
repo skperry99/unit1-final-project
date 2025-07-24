@@ -14,25 +14,30 @@ function Careers() {
       </p>
       <p>
         Master of the Crate Escape: Ensure the timely and safe departure of
-        residents (into loving homes, of course!).<br/>
+        residents (into loving homes, of course!).
+        <br />
         Negotiator of Nuzzles: Facilitate harmonious interactions between
-        residents, some of whom may have strong personalities.<br/> Professional
-        Belly Rubber: Be on standby for immediate deployment of tummy rubs and
-        chin scratches, as per resident requirements.<br/> Feast Facilitator:
-        Dispense delicious meals (and sometimes questionable snacks smuggled by
-        the more cunning residents) on a rigorous schedule.<br/> Environmental
-        Enrichment Expert: Provide stimulating play, comfortable spaces, and
-        plenty of squeaky toys to keep residents entertained.<br/> Chief Litter Box
-        Landscaper (for the feline division): Maintain pristine accommodations
-        for discerning feline friends.<br/> Occasional Target for Playful Bites (no
-        actual harm intended): Develop quick reflexes and a good sense of humor
-        for enthusiastic greetings.<br/> Emotional Support Human: Be a beacon of
-        comfort and reassurance for both residents and the occasional
-        overwhelmed volunteer.<br/> The Purr-fect Candidate Will Possess: An
-        unwavering love for animals (even those who think "personal space" is a
-        myth). A strong bladder and an even stronger stomach (it's a shelter,
-        after all). A keen eye for a good adoption photo op (bonus points for using props
-        and costumes). Excellent communication skills (especially when mediating
+        residents, some of whom may have strong personalities.
+        <br /> Professional Belly Rubber: Be on standby for immediate deployment
+        of tummy rubs and chin scratches, as per resident requirements.
+        <br /> Feast Facilitator: Dispense delicious meals (and sometimes
+        questionable snacks smuggled by the more cunning residents) on a
+        rigorous schedule.
+        <br /> Environmental Enrichment Expert: Provide stimulating play,
+        comfortable spaces, and plenty of squeaky toys to keep residents
+        entertained.
+        <br /> Chief Litter Box Landscaper (for the feline division): Maintain
+        pristine accommodations for discerning feline friends.
+        <br /> Occasional Target for Playful Bites (no actual harm intended):
+        Develop quick reflexes and a good sense of humor for enthusiastic
+        greetings.
+        <br /> Emotional Support Human: Be a beacon of comfort and reassurance
+        for both residents and the occasional overwhelmed volunteer.
+        <br /> The Purr-fect Candidate Will Possess: An unwavering love for
+        animals (even those who think "personal space" is a myth). A strong
+        bladder and an even stronger stomach (it's a shelter, after all). A keen
+        eye for a good adoption photo op (bonus points for using props and
+        costumes). Excellent communication skills (especially when mediating
         arguments between a territorial chihuahua and a sassy Siamese). A desire
         to make a real difference, one wagging tail or contented purr at a time.
         Bonus Points Awarded For: Expertise in decoding dramatic sighs from

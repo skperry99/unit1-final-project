@@ -14,7 +14,7 @@ function AdoptionForm() {
       name: "",
       email: "",
     });
-    console.log = ("Submitted");
+    console.log = "Submitted";
   };
 
   return (
