@@ -1,41 +1,43 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function AdoptionForm() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const [formData, setFormData] = useState({ name: "", email: "" });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setFormData({
+      name: "",
+      email: "",
+    });
+    console.log = ("Submitted");
   };
 
   return (
-    <form action="">
-      <label>
-        Name:{" "}
-        <input
-          type="text"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-      </label>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleChange}
+      />
+
       <br />
-      <label>
-        Email:
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        :
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-      </label>
+      <label htmlFor="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        value={formData.email}
+        onChange={handleChange}
+      />
+
       <br />
 
       <button type="submit">Submit</button>
@@ -43,4 +45,4 @@ function AdoptionForm() {
   );
 }
 
-export default AdoptionForm
+export default AdoptionForm;

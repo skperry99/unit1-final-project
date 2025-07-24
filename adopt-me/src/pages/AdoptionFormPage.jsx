@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import AdoptionForm from "../components/AdoptionForm";
 
 function AdoptionFormPage() {
