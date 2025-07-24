@@ -3,7 +3,7 @@ import shelter from "../assets/images/shelter.jpg";
 
 function ContactPage() {
   return (
-    <div className="contactPage">
+    <div className="contact">
       <h1>CONTACT US</h1>
       <img src={shelter} width={350} height={350} alt="Bark Avenue building" />
       <div className="logistics">

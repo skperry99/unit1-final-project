@@ -1,17 +1,15 @@
 import gp from "../assets/images/guinea-pig.jpg";
-import gp2 from "../assets/images/guinea-pig2.jpg";
+import gp2 from "../assets/images/guinea-pig-2.jpg";
 import goat from "../assets/images/goat.jpg";
-import snake from "../assets/images/snake.jpg";
+import snake from "../assets/images/snake.png";
 import cat1 from "../assets/images/cat1.jpg";
-import cat2 from "../assets/images/cat2.jpg";
 import cat3 from "../assets/images/cat3.jpg";
 import cat4 from "../assets/images/cat3.jpg";
 import dog from "../assets/images/dog.jpg";
 import dog2 from "../assets/images/dog2.jpg";
-import dog3 from "../assets/images/dog3.jpg";
+import dog3 from "../assets/images/dog3.png";
 import dog4 from "../assets/images/dog4.jpg";
 import dog5 from "../assets/images/dog5.jpg";
-import dog6 from "../assets/images/dog6.jpg";
 
 export const animalList = [
   {
