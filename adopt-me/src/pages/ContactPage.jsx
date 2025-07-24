@@ -13,6 +13,26 @@ function ContactPage() {
           to 4 p.m.
         </p>
       </div>
+
+      <form id="contactForm" method="POST">
+        <fieldset>
+          <label htmlFor="name">Full Name</label>
+          <input name="name" placeholder="Enter full name..." type="text" />
+          <br />
+          <label htmlFor="email">Email</label>
+          <input name="email" placeholder="Enter email..." type="email" />
+          <br />
+          <label htmlFor="message">Message</label>
+          <textarea
+            rows="6"
+            placeholder="Enter message..."
+            name="message"
+            required
+          ></textarea>
+          <br />
+          <button type="submit"> Send Message</button>
+        </fieldset>
+      </form>
     </div>
   );
 }
