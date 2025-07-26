@@ -3,7 +3,7 @@ import Main from "../components/Main";
 function AnimalsPage() {
   return (
     <div className="animalsPage">
-      <h1 className="animalsTitle">Available Animals</h1>
+      <h2 className="animalsTitle">Available Animals</h2>
       <Main />
     </div>
   );
