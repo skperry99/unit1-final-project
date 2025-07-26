@@ -1,6 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const AdoptionForm = (props) => {
+const AdoptionForm = () => {
+  const { animalName } = useParams();
+  const [animalNameForm, setAnimalNameForm] = useState("");
+
+  useEffect(() => {
+    setAnimalNameForm(animalName);
+  }, [animalName]);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -36,8 +44,8 @@ const AdoptionForm = (props) => {
           type="text"
           id="animalName"
           name="animalName"
-          value={props.name}
-          onChange={handleChange}
+          value={animalNameForm}
+          onChange={(e) => setAnimalNameForm(e.target.value)}
         />
 
         <br />
