@@ -1,7 +1,11 @@
 import { useState } from "react";
 
-const AdoptionForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "" });
+const AdoptionForm = (props) => {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
   const [submitMessage, setSubmitMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
 
@@ -13,7 +17,8 @@ const AdoptionForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormData({
-      name: "",
+      firstName: "",
+      lastName: "",
       email: "",
     });
     setShowMessage(true);
@@ -26,12 +31,32 @@ const AdoptionForm = () => {
     <div className="formContainer">
       <h2>Adoption Interest</h2>
       <form id="adoptionForm" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="animalName">Animal Name:</label>
         <input
           type="text"
-          id="name"
-          name="name"
-          value={formData.name}
+          id="animalName"
+          name="animalName"
+          value={props.name}
+          onChange={handleChange}
+        />
+
+        <br />
+        <label htmlFor="firstName">First Name:</label>
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          value={formData.firstName}
+          onChange={handleChange}
+        />
+
+        <br />
+        <label htmlFor="lastName">Last Name:</label>
+        <input
+          type="text"
+          id="lastName"
+          name="lastName"
+          value={formData.lastName}
           onChange={handleChange}
         />
 

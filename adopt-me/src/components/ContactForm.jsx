@@ -1,7 +1,11 @@
 import { useState } from "react";
 
 const ContactForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [submitMessage, setSubmitMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
 
@@ -15,7 +19,7 @@ const ContactForm = () => {
     setFormData({
       name: "",
       email: "",
-      message: ""
+      message: "",
     });
     setShowMessage(true);
     setSubmitMessage(`Thank you! We will contact you soon.`);
@@ -23,17 +27,20 @@ const ContactForm = () => {
 
   return (
     <div className="formContainer">
-      <h2>Send a message:</h2>
+      <h2>Send us a message:</h2>
       <form id="adoptionForm" onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          required
-          value={formData.name}
-          onChange={handleChange}
-        />
+        <div className="formGroup">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your full name..."
+            required
+            value={formData.name}
+            onChange={handleChange}
+          />
+        </div>
 
         <br />
         <label htmlFor="email">Email:</label>
@@ -41,6 +48,7 @@ const ContactForm = () => {
           type="email"
           id="email"
           name="email"
+          placeholder="Enter your email address..."
           required
           value={formData.email}
           onChange={handleChange}
@@ -53,7 +61,7 @@ const ContactForm = () => {
           name="user_comments"
           rows="5"
           cols="40"
-          placeholder="Enter message here..."
+          placeholder="Enter your message here..."
         ></textarea>
 
         <button type="submit">Submit</button>
