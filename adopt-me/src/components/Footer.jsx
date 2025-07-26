@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="footer">
-      <div>
+      <div className="footerLinks">
         <Link to="/Careers">Careers</Link>
         <Link to="/Volunteer">Volunteer</Link>
       </div>

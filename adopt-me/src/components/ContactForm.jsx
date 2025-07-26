@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-const AdoptionForm = () => {
-  const [formData, setFormData] = useState({ name: "", email: "" });
+const ContactForm = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitMessage, setSubmitMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
 
@@ -15,22 +15,22 @@ const AdoptionForm = () => {
     setFormData({
       name: "",
       email: "",
+      message: ""
     });
     setShowMessage(true);
-    setSubmitMessage(
-      `Thank you for your interest in adopting a pet! We will contact you soon.`
-    );
+    setSubmitMessage(`Thank you! We will contact you soon.`);
   };
 
   return (
     <div className="formContainer">
-      <h2>Adoption Interest</h2>
+      <h2>Send a message:</h2>
       <form id="adoptionForm" onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
           id="name"
           name="name"
+          required
           value={formData.name}
           onChange={handleChange}
         />
@@ -41,11 +41,20 @@ const AdoptionForm = () => {
           type="email"
           id="email"
           name="email"
+          required
           value={formData.email}
           onChange={handleChange}
         />
 
         <br />
+        <label for="comments">Message:</label>
+        <textarea
+          id="comments"
+          name="user_comments"
+          rows="5"
+          cols="40"
+          placeholder="Enter message here..."
+        ></textarea>
 
         <button type="submit">Submit</button>
       </form>
@@ -55,4 +64,4 @@ const AdoptionForm = () => {
   );
 };
 
-export default AdoptionForm;
+export default ContactForm;
