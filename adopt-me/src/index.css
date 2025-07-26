@@ -240,6 +240,14 @@ textarea::placeholder {
   font-style: italic;
 }
 
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 ul {
   display: inline-block;
   list-style-type: square;

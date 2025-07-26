@@ -1,5 +1,6 @@
 import shelter from "../assets/images/shelter.jpg";
 import ContactForm from "../components/ContactForm";
+import Form from "../components/Form";
 
 function ContactPage() {
   return (
@@ -15,7 +16,7 @@ function ContactPage() {
           Sunday: 12 to 4 p.m.
         </p>
       </div>
-      <ContactForm />
+      <Form />
     </div>
   );
 }

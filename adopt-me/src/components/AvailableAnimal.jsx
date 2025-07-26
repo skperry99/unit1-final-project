@@ -1,13 +1,6 @@
 import { Link } from "react-router-dom";
-import AdoptionForm from "./AdoptionForm.jsx";
-// import { useState } from "react";
 
 const AvailableAnimal = (props) => {
-  // const [animalName, setAnimalName] = useState(null);
-
-  // const handleClick = (param) => {
-  //   setAnimalName(param);
-  // };
 
   return (
     <div>
@@ -24,7 +17,6 @@ const AvailableAnimal = (props) => {
           <h4> {props.blurb} </h4>
         </div>
       </Link>
-      <AdoptionForm animalName={props.name} />
     </div>
   );
 };
