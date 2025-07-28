@@ -59,6 +59,7 @@ const Form = () => {
             type="text"
             id="animalName"
             name="animalName"
+            required
             value={animalNameForm}
             onChange={(e) => setAnimalNameForm(e.target.value)}
           />
@@ -71,6 +72,7 @@ const Form = () => {
           id="firstName"
           name="firstName"
           placeholder="First name..."
+          required
           value={formData.firstName}
           onChange={handleChange}
         />
@@ -82,6 +84,7 @@ const Form = () => {
           id="lastName"
           name="lastName"
           placeholder="Last name..."
+          required
           value={formData.lastName}
           onChange={handleChange}
         />
@@ -93,6 +96,7 @@ const Form = () => {
           id="email"
           name="email"
           placeholder="Email address..."
+          required
           value={formData.email}
           onChange={handleChange}
         />
@@ -106,6 +110,7 @@ const Form = () => {
             rows="5"
             cols="40"
             placeholder="Enter your message here..."
+            required
           ></textarea>
         </div>
         <br />

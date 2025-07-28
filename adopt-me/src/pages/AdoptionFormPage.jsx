@@ -1,4 +1,3 @@
-import AdoptionForm from "../components/AdoptionForm";
 import Form from "../components/Form";
 
 const AdoptionFormPage = () => {
