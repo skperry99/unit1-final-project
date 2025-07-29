@@ -4,12 +4,7 @@ import logo from "../assets/images/logo.jpg";
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <img
-        src={logo}
-        id="navLogo"
-        height={"60px"}
-        alt="cat and dog logo"
-      />
+      <img src={logo} id="navLogo" height={"60px"} alt="cat and dog logo" />
 
       <ul className="navbarList">
         <li className="navListItem">

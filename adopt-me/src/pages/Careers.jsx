@@ -1,4 +1,4 @@
-function Careers(props) {
+const Careers = (props) => {
   return (
     <div className="careersPage">
       <h2>{props.title}</h2>
@@ -74,6 +74,6 @@ function Careers(props) {
       </p>
     </div>
   );
-}
+};
 
 export default Careers;

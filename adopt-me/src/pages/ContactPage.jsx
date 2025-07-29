@@ -1,7 +1,7 @@
 import shelter from "../assets/images/shelter.jpg";
 import Form from "../components/Form";
 
-function ContactPage(props) {
+const ContactPage = (props) => {
   return (
     <div className="contactPage">
       <h2>{props.title}</h2>
@@ -21,6 +21,6 @@ function ContactPage(props) {
       <Form />
     </div>
   );
-}
+};
 
 export default ContactPage;

@@ -1,6 +1,6 @@
 import homePic from "../assets/images/home.jpg";
 
-export default function HomePage(props) {
+const HomePage = (props) => {
   return (
     <div className="homePage">
       <h2>{props.title}</h2>
@@ -11,4 +11,6 @@ export default function HomePage(props) {
       </p>
     </div>
   );
-}
+};
+
+export default HomePage;

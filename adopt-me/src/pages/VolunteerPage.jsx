@@ -1,4 +1,4 @@
-export default function VolunteerPage(props) {
+const VolunteerPage = (props) => {
   return (
     <div className="volunteerPage">
       <h2>{props.title}</h2>
@@ -47,4 +47,5 @@ export default function VolunteerPage(props) {
       </p>
     </div>
   );
-}
+};
+export default VolunteerPage;

@@ -45,7 +45,7 @@ body {
   margin: 20px;
   padding: 10px 15px;
   text-decoration: none;
-  transition: all .3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .footerListItem:hover {
@@ -109,7 +109,7 @@ body {
   margin: 20px;
   padding: 10px 15px;
   text-decoration: none;
-  transition: all .3s ease 0s;
+  transition: all 0.3s ease 0s;
 }
 
 .navListItem:hover {
@@ -121,7 +121,6 @@ body {
   margin-right: auto;
   margin-left: 3%;
   padding: 0;
-
 }
 
 a {
