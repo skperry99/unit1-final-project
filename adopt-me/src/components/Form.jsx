@@ -103,7 +103,7 @@ const Form = () => {
 
         <br />
         <div className={contactOnly}>
-          <label for="message">Message:</label>
+          <label htmlFor="message">Message:</label>
           <textarea
             id="message"
             name="message"
@@ -111,6 +111,8 @@ const Form = () => {
             cols="40"
             placeholder="Enter your message here..."
             required
+            value={formData.message}
+            onChange={handleChange}
           ></textarea>
         </div>
         <br />

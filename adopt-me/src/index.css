@@ -27,25 +27,23 @@ body {
   width: 100%;
   height: 80px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  flex-direction: row;
   background-color: #00bbb2;
+  padding: 30px 5%;
 }
 
 .footer a {
   text-decoration: none;
   width: 80px;
-  margin: 20px;
+  margin: 0 20px;
   text-align: center;
   display: block;
   float: left;
 }
 
 .footerSocial {
-  color: black;
   font-size: 1.6em;
-  margin: 20px;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -77,20 +75,35 @@ body {
 
 .navbar {
   background-color: #00bbb2;
-  position: sticky;
-  top: 0;
-  overflow: hidden;
+  height: 80px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  height: 80px;
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+}
+
+.navbarList {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navListItem {
+  display: inline-block;
+  font-size: 18px;
+  margin: 20px;
+  padding: 10px 15px;
+  line-height: normal;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
 .navbar a {
   width: 70px;
-  margin: 20px;
   text-align: center;
   display: block;
   float: right;
@@ -102,9 +115,15 @@ a {
   color: black;
 }
 
-a:hover {
-  transform: scale(1.2);
+.navListItem:hover {
+  transform: scale(1.5);
   background-color: #bf362c;
+}
+
+#navLogo {
+  margin-right: auto;
+  display: inline-block;
+  align-self: auto;
 }
 
 main {
@@ -167,11 +186,6 @@ button:hover {
   font-weight: bold;
   background-color: #bf362c;
 }
-
-/* .layout {
-  flex-direction: column;
-  height: 100%;
-} */
 
 .animalsLayout {
   display: flex;
@@ -250,14 +264,29 @@ textarea::placeholder {
   display: none;
 }
 
-ul {
+.careersList {
   display: inline-block;
   list-style-type: square;
   margin: auto 25%;
 }
 
-li {
+.volunteerList {
+  display: inline-block;
+  list-style-type: square;
+  margin: auto 25%;
+}
+
+.careersListItem {
   line-height: 1.5;
+  font-size: 0.9em;
+  font-weight: lighter;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.volunteerListItem {
+  line-height: 1.5;
+  font-weight: lighter;
   font-size: 0.9em;
   margin: 10px;
   padding: 5px 10px;

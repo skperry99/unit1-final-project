@@ -19,14 +19,14 @@ function App() {
         <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />{" "}
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/AboutPage" element={<AboutPage />} />
-          <Route path="/AnimalsPage" element={<AnimalsPage />} />
-          <Route path="/ContactPage" element={<ContactPage />} />
+          <Route path="/" element={<HomePage title="Welcome to Bark Avenue Rescue Kennel"/>}  />
+          <Route path="/AboutPage" element={<AboutPage title="About Us" />} />
+          <Route path="/AnimalsPage" element={<AnimalsPage title="Available Animals"/>} />
+          <Route path="/ContactPage" element={<ContactPage title="Contact Us"/>} />
           <Route path="/AdoptionFormPage" element={<AdoptionFormPage />} />
           <Route path="/AdoptionFormPage/:animalName" element={<AdoptionFormPage />} />
-          <Route path="/Careers" element={<Careers />} />
-          <Route path="/Volunteer" element={<VolunteerPage />} />
+          <Route path="/Careers" element={<Careers title="Join the Circus (of Cuddles and Chaos) at Bark Avenue!"/>} />
+          <Route path="/Volunteer" element={<VolunteerPage title="Volunteer with Us"/>} />
         </Routes>
         <Footer />
       </Router>

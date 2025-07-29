@@ -1,10 +1,10 @@
 import shelter from "../assets/images/shelter.jpg";
 import Form from "../components/Form";
 
-function ContactPage() {
+function ContactPage(props) {
   return (
     <div className="contactPage">
-      <h2 className="contactTitle">CONTACT US</h2>
+      <h2>{props.title}</h2>
       <img src={shelter} width="45%" alt="Bark Avenue building" />
       <div className="logistics">
         <p>
