@@ -75,6 +75,7 @@ body {
 #instagram:hover {
   transform: scaleX(-1) scale(2);
   color: #cbf7f6;
+  fa-spin;
 }
 
 #facebook {
