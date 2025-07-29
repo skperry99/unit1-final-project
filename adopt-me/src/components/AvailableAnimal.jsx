@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 const AvailableAnimal = (props) => {
   return (
-    <div>
+    <div className="animalCard">
       <Link to={`/AdoptionFormPage/${props.name}`}>
-        <div className="animalCard">
+        <div>
           <img
             className="animalPic"
             src={props.image}

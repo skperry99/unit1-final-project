@@ -33,6 +33,17 @@ body {
   padding: 30px 5%;
 }
 
+.footer a {
+  text-decoration: none;
+  transition: transform 0.3s;
+  color: black;
+  width: 80px;
+  margin: 0 20px;
+  text-align: center;
+  display: block;
+  float: left;
+}
+
 .footer ul {
   list-style: none;
   display: flex;
@@ -117,13 +128,7 @@ body {
   background-color: #bf362c;
 }
 
-#navLogo {
-  margin-right: auto;
-  margin-left: 3%;
-  padding: 0;
-}
-
-a {
+.navbar a {
   text-decoration: none;
   transition: transform 0.3s;
   color: black;
@@ -132,6 +137,12 @@ a {
   text-align: center;
   display: block;
   float: left;
+}
+
+#navLogo {
+  margin-right: auto;
+  margin-left: 3%;
+  padding: 0;
 }
 
 #navLogo {
@@ -220,10 +231,18 @@ button:hover {
   margin-bottom: 10px;
   border: 5px solid;
   border-radius: 10px;
+  transition: all 0.3s ease 0s;
 }
 
-.animalPic:hover {
+.animalCard a {
+  text-decoration: none;
+  color: black;
+}
+
+.animalCard:hover {
   transform: scale(1.1);
+  border-color: #00bbb2;
+  background-color: #00bbb2;
 }
 
 .formContainer {
