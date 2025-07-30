@@ -59,7 +59,6 @@ const Form = () => {
             type="text"
             id="animalName"
             name="animalName"
-            required
             value={animalNameForm}
             onChange={(e) => setAnimalNameForm(e.target.value)}
           />
@@ -110,7 +109,6 @@ const Form = () => {
             rows="5"
             cols="40"
             placeholder="Enter your message here..."
-            required
             value={formData.message}
             onChange={handleChange}
           ></textarea>

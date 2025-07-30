@@ -72,10 +72,21 @@ body {
 #instagram {
   margin: 0 20px;
 }
+
 #instagram:hover {
   transform: scaleX(-1) scale(2);
   color: #cbf7f6;
-  fa-spin;
+  animation: rotate-instagram .5s linear 3;
+  -webkit-animation: rotate-instagram .5s linear 3;
+}
+
+@keyframes rotate-instagram {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
 }
 
 #facebook {
@@ -92,8 +103,9 @@ body {
 }
 
 #twitter:hover {
-  transform: scaleY(-1) scale(2);
   color: #ffc78e;
+  transition: 0.9s;
+  transform: rotateY(180deg);
 }
 
 .navbar {
@@ -117,7 +129,7 @@ body {
 
 .navListItem {
   display: inline-block;
-  font-size: 1.1em;
+  font-size: 1.3em;
   margin: 20px;
   padding: 10px 15px;
   text-decoration: none;
@@ -144,12 +156,30 @@ body {
   margin-right: auto;
   margin-left: 3%;
   padding: 0;
+  transition: width 2s, height 2s, transform 2s;
 }
 
-#navLogo {
-  margin-right: auto;
-  display: inline-block;
-  align-self: auto;
+#navLogo:hover {
+  width: 100px;
+  height: 100px;
+  transform: rotate(180deg);
+}
+
+.navbar {
+  animation-duration: 3s;
+  animation-name: slide-in;
+}
+
+@keyframes slide-in {
+  from {
+    translate: 150vw 0;
+    scale: 200% 1;
+  }
+
+  to {
+    translate: 0 0;
+    scale: 100% 1;
+  }
 }
 
 main {

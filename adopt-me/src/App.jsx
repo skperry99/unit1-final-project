@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="layout">
       <Router>
-        <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />{" "}
+        <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />
         <Navbar />
         <Routes>
           <Route
