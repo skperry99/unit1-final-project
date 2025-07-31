@@ -118,7 +118,7 @@ const Form = () => {
         <button type="submit">Submit</button>
       </form>
 
-      {showMessage && <p>{submitMessage}</p>}
+      {showMessage && <p className="submitResponse">{submitMessage}</p>}
     </div>
   );
 };
