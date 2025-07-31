@@ -1,11 +1,11 @@
 import shelter2 from "../assets/images/shelter2.jpg";
 
-const AboutPage = () => {
+const AboutPage = (props) => {
   return (
     <div className="aboutPage">
       <img src={shelter2} width="700px" alt="Bark Avenue building" />
       <div className="aboutText">
-        <h2 className="aboutTitle">ABOUT US</h2>
+        <h2>{props.title}</h2>
         <p>
           The shelter is home to a delightful mix of personalities. There's the
           "energetic enthusiast" who can outrun a cheetah, the "lap-loving

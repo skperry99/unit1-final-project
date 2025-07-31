@@ -7,6 +7,7 @@ import ContactPage from "./pages/ContactPage.jsx";
 import AdoptionFormPage from "./pages/AdoptionFormPage.jsx";
 import Careers from "./pages/Careers.jsx";
 import VolunteerPage from "./pages/VolunteerPage.jsx";
+import Stories from "./pages/StoriesPage.jsx";
 import Footer from "./components/Footer.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Header from "./components/Header.jsx";
@@ -16,16 +17,41 @@ function App() {
   return (
     <div className="layout">
       <Router>
-        <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />{" "}
+        <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/AboutPage" element={<AboutPage />} />
-          <Route path="/AnimalsPage" element={<AnimalsPage />} />
-          <Route path="/ContactPage" element={<ContactPage />} />
+          <Route
+            path="/"
+            element={<HomePage title="Welcome to Bark Avenue Rescue Kennel" />}
+          />
+          <Route path="/AboutPage" element={<AboutPage title="About Us" />} />
+          <Route
+            path="/AnimalsPage"
+            element={<AnimalsPage title="Available Animals" />}
+          />
+          <Route
+            path="/ContactPage"
+            element={<ContactPage title="Contact Us" />}
+          />
           <Route path="/AdoptionFormPage" element={<AdoptionFormPage />} />
-          <Route path="/Careers" element={<Careers />} />
-          <Route path="/Volunteer" element={<VolunteerPage />} />
+          <Route
+            path="/AdoptionFormPage/:animalName"
+            element={<AdoptionFormPage />}
+          />
+          <Route
+            path="/Careers"
+            element={
+              <Careers title="Join the Circus (of Cuddles and Chaos) at Bark Avenue!" />
+            }
+          />
+          <Route
+            path="/Volunteer"
+            element={<VolunteerPage title="Volunteer with Us" />}
+          />
+          <Route
+            path="/StoriesPage"
+            element={<Stories title="Adoption Stories" />}
+          />
         </Routes>
         <Footer />
       </Router>
