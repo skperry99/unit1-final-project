@@ -3,7 +3,10 @@ import StoryForm from "../components/StoryForm.jsx";
 import StoryList from "../components/StoryList.jsx";
 
 const Stories = () => {
-  const [allStories, setAllStories] = useState([]);
+  const [allStories, setAllStories] = useState([
+    `Chrissy was an amazing cat! -Tyler`,
+    `Taz is a sweetheart! -Denise`,
+  ]);
 
   const handleNewStory = (newStory) => {
     setAllStories([...allStories, newStory]);

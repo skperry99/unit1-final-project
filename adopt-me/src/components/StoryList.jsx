@@ -7,7 +7,7 @@ const StoryList = ({ storyItem }) => {
       ) : (
         <ul className="storyList">
           {storyItem.map((story, index) => (
-            <li className="thisStory" key={index}>{story}</li>
+            <li key={index}>{story}</li>
           ))}
         </ul>
       )}

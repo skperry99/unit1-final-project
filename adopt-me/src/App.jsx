@@ -50,7 +50,7 @@ function App() {
           />
           <Route
             path="/StoriesPage"
-            element={<Stories title="Success Stories" />}
+            element={<Stories title="Adoption Stories" />}
           />
         </Routes>
         <Footer />

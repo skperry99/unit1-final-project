@@ -388,11 +388,13 @@ textarea::placeholder {
   align-items: center;
   align-content: center;
   margin: 4vw 10vw;
+  max-width: 80%;
+
 }
 
 .storyList li {
-  background-color:  hsl(179, 75%,84%);
-  border: 1px solid hsl(179, 75%,86%);
+  background-color: hsl(179, 75%, 84%);
+  border: 1px solid hsl(179, 75%, 80%);
   flex-direction: column;
   align-items: center;
   width: 200px;

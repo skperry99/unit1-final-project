@@ -5,8 +5,10 @@ const StoryForm = ({ onSubmit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(storyText);
-    setStoryText("");
+    if (storyText.trim !== "") {
+      onSubmit(storyText);
+      setStoryText("");
+    }
   };
 
   return (
