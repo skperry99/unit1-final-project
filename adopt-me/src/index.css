@@ -356,7 +356,17 @@ textarea::placeholder {
   padding: 5px 10px;
 }
 
-@media screen and (max-width: 850px) {
+@media (max-width: 768px) {
+  .layout {
+    width: 92vw;
+    margin: 4vw;
+  }
+
+  .main {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+  }
+}
+/* @media screen and (max-width: 850px) {
   .layout {
     width: 92vw;
     margin: 4vw;
@@ -367,9 +377,32 @@ textarea::placeholder {
   h4 {
     width: 100%;
   }
-}
+} */
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
 
-@media screen and (max-width: 630px) {
+  .main {
+    gap: 10px;
+  }
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 2em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  h4 {
+    font-size: 0.7em;
+  }
+}
+/* @media screen and (max-width: 630px) {
   h2,
   h4 {
     font-size: 2rem;
@@ -377,7 +410,7 @@ textarea::placeholder {
   h3 {
     font-size: 1.4rem;
   }
-}
+} */
 
 .storyList {
   list-style: none;
@@ -389,7 +422,6 @@ textarea::placeholder {
   align-content: center;
   margin: 4vw 10vw;
   max-width: 80%;
-
 }
 
 .storyList li {
