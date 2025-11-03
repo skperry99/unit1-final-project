@@ -1,22 +1,22 @@
 import { Link } from "react-router-dom";
 
-const AvailableAnimal = (props) => {
+const AvailableAnimal = ({ name, image, blurb }) => {
   return (
-    <div className="animalCard">
-      <Link to={`/AdoptionFormPage/${props.name}`}>
+    <article className="animalCard">
+      <Link to={`/AdoptionFormPage/${name}`}>
         <div>
           <img
             className="animalPic"
-            src={props.image}
+            src={image}
             width="200px"
             height="200px"
-            alt={`${props.name} picture`}
+            alt={`${name} picture`}
           />
-          <h3> {props.name} </h3>
-          <h4> {props.blurb} </h4>
+          <h3> {name} </h3>
+          <h4> {blurb} </h4>
         </div>
       </Link>
-    </div>
+    </article>
   );
 };
 
