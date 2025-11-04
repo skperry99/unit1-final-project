@@ -1,11 +1,11 @@
 import Main from "../components/Main";
 
-const AnimalsPage = (props) => {
+const AnimalsPage = ({ title = "Available Animals" }) => {
   return (
-    <div className="animalsPage">
-      <h2>{props.title}</h2>
+    <section className="animals-page">
+      <h2>{title}</h2>
       <Main />
-    </div>
+    </section>
   );
 };
 
