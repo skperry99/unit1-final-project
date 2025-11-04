@@ -6,23 +6,14 @@ const Navbar = () => {
     <nav className="navbar">
       <img src={logo} id="navLogo" height={"60px"} alt="cat and dog logo" />
 
-      <ul className="navbarList">
-        <li className="navListItem">
-          <Link to="/">Home</Link>
-        </li>
-        <li className="navListItem">
-          <Link to="/AboutPage">About</Link>
-        </li>
-        <li className="navListItem">
-          <Link to="/ContactPage">Contact</Link>
-        </li>
-        <li className="navListItem">
-          <Link to="/AnimalsPage">Animals</Link>
-        </li>
-        <li className="navListItem">
-          <Link to="/StoriesPage">Stories</Link>
-        </li>
+      <ul className="navbar-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/contact">Contact</Link></li>
+        <li><Link to="/animals">Animals</Link></li>
+        <li><Link to="/stories">Stories</Link></li>
       </ul>
+
     </nav>
   );
 };
