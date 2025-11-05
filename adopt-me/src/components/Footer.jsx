@@ -8,35 +8,28 @@ library.add(fab);
 const Footer = () => {
   return (
     <footer className="footer">
-      <ul className="footerSocial">
-        <li className="footerSocialItem">
-          <FontAwesomeIcon
-            id="instagram"
-            icon="fa-brands fa-square-instagram"
-            flip="both"
-          />
+      <ul className="footer-social">
+        <li>
+          <FontAwesomeIcon icon="fa-brands fa-square-instagram" />
         </li>
-        <li className="footerSocialItem">
-          <FontAwesomeIcon id="facebook" icon="fa-brands fa-facebook" />
+        <li>
+          <FontAwesomeIcon icon="fa-brands fa-facebook" />
         </li>
-        <li className="footerSocialItem">
-          <FontAwesomeIcon
-            id="twitter"
-            icon="fa-brands fa-square-x-twitter"
-          />
-        </li>
-      </ul>
-      <ul className="footerLinks">
-        <li className="footerListItem">
-          <Link to="/Careers">Careers</Link>
-        </li>
-        <li className="footerListItem">
-          <Link to="/Volunteer">Volunteer</Link>
+        <li>
+          <FontAwesomeIcon icon="fa-brands fa-square-x-twitter" />
         </li>
       </ul>
 
-      <div className="copyright">&copy; {new Date().getFullYear()} BARK</div>
+      <ul className="footer-links">
+        <li><Link to="/careers">Careers</Link></li>
+        <li><Link to="/volunteer">Volunteer</Link></li>
+      </ul>
+
+      <p className="footer-copy">
+        &copy; {new Date().getFullYear()} BARK
+      </p>
     </footer>
   );
 };
+
 export default Footer;
