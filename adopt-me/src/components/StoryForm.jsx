@@ -1,32 +1,38 @@
 import { useState } from "react";
 
-const StoryForm = ({ onSubmit }) => {
+export default function StoryForm({ onSubmit }) {
   const [storyText, setStoryText] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (storyText.trim !== "") {
-      onSubmit(storyText);
-      setStoryText("");
-    }
+    const value = storyText.trim(); // ✅ call trim()
+    if (!value) return; // guard against empty strings
+    onSubmit(value);
+    setStoryText("");
   };
 
   return (
     <div className="formContainer">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} noValidate>
+        <label
+          htmlFor="storyText"
+          style={{ display: "block", marginBottom: 6 }}
+        >
+          Share your adoption story
+        </label>
         <textarea
           id="storyText"
           name="storyText"
-          rows="5"
-          cols="40"
+          rows={5}
           placeholder="Tell us your pet adoption story..."
           value={storyText}
           onChange={(e) => setStoryText(e.target.value)}
+          maxLength={800} // optional: light guard
         />
-        <button type="submit">Submit</button>
+        <button type="submit" style={{ marginTop: 8 }}>
+          Submit
+        </button>
       </form>
     </div>
   );
-};
-
-export default StoryForm;
+}

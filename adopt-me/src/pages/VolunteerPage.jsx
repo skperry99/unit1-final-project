@@ -1,51 +1,48 @@
-const VolunteerPage = (props) => {
+export default function VolunteerPage({ title = "Volunteer with Us" }) {
   return (
-    <div className="volunteerPage">
-      <h2>{props.title}</h2>
+    <section className="volunteerPage" aria-labelledby="volunteer-heading">
+      <h2 id="volunteer-heading">{title}</h2>
+
       <p>
-        Unleash Your Potential: Bark Avenue Rescue Kennel is Seeking Human Pack
-        Members! Do you possess an uncanny ability to decipher a cat's side-eye
-        or a dog's "I need to go outside, like, five minutes ago" dance? Does
-        you find joy in the aroma of wet dog and the symphony of happy purrs? If
-        so, then you might be the purr-fect fit for this team!
+        <strong>Unleash your potential:</strong> Bark Avenue Rescue Kennel is
+        seeking human pack members! Do you possess an uncanny ability to
+        decipher a cat’s side-eye or a dog’s “I need to go outside in five
+        minutes” dance? Do you find joy in the aroma of wet dog and the symphony
+        of happy purrs? You might be the purr-fect fit for our team!
       </p>
-      <p>We're looking for: </p>
+
+      <h3>We’re looking for:</h3>
       <ul className="volunteerList">
         <li className="volunteerListItem">
-          Chief Poop Scooper & Kennel Interior Designer:you will be responsible
-          for keeping the animal apartments spick and span. Must be comfortable
-          with heavy lifting (50+ lbs), navigating confined spaces, and possess
-          a strong stomach. Bonus points if you can make a kennel look like a
-          five-star resort (animals have standards too, you know).
+          <strong>Chief Poop Scooper & Kennel Interior Designer:</strong> Keep
+          animal apartments spotless. Comfortable with lifting 50+ lbs and
+          confined spaces. Bonus if you can make a kennel look five-star.
         </li>
         <li className="volunteerListItem">
-          Feline Fanatic & Purr-fessional Cuddler: The main duty will be to
-          provide endless affection and playtime for our fabulous felines. Must
-          be immune to adorable kitten hypnosis and able to differentiate
-          between a "feed me now" meow and a "pet me forever" meow.
+          <strong>Feline Fanatic & Purr-fessional Cuddler:</strong> Provide
+          endless affection and playtime for fabulous felines. Immune to
+          adorable kitten hypnosis.
         </li>
         <li className="volunteerListItem">
-          Dog Whisperer & Treat Dispenser Extraordinaire: Can you speak fluent
-          "woof"? Do you know the difference between a playful nip and a "don't
-          mess with me" warning?
+          <strong>Dog Whisperer & Treat Dispenser Extraordinaire:</strong> Speak
+          fluent “woof” and spot the difference between a playful nip and a
+          warning.
         </li>
         <li className="volunteerListItem">
-          Human-Animal Matchmaker & Adoption Facilitator: you will be the bridge
-          between furry friends and their forever families. Must be a skilled
-          interviewer (for both humans and animals), possess a keen eye for
-          compatibility, and be able to withstand the emotional rollercoaster of
-          sending pets to their happy homes.
+          <strong>Human-Animal Matchmaker & Adoption Facilitator:</strong>{" "}
+          Bridge furry friends and forever families with empathy and great
+          interviewing skills.
         </li>
       </ul>
+
+      <h3>Ideal candidates will:</h3>
       <p>
-        Ideal Candidates Will: Have a genuine love for animals (obvious, but
-        worth mentioning). Possess a sense of humor (you will need it). Be able
-        to work well in a team (because wrangling a litter of puppies alone is
-        not for the faint of heart). Not be afraid of a little (or a lot of)
-        fur. Be willing to learn the subtle art of dog-walking in the rain and
-        cat-napping during a loud thunderstorm.
+        Have a genuine love for animals (obviously), a good sense of humor
+        (you’ll need it), and thrive on teamwork—because wrangling a litter of
+        puppies solo is not for the faint of heart. Be unbothered by fur, and
+        willing to master dog-walking in the rain and strategic cat-napping
+        during thunderstorms.
       </p>
-    </div>
+    </section>
   );
-};
-export default VolunteerPage;
+}
