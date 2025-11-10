@@ -555,3 +555,13 @@ textarea::placeholder {
     grid-template-columns: 1.2fr 1fr; /* image | details */
   }
 }
+
+.storiesPage {
+  padding: 16px;
+}
+.formContainer form > label {
+  font-weight: 600;
+}
+.storyList li {
+  text-align: center;
+}

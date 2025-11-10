@@ -1,18 +1,21 @@
-const StoryList = ({ storyItem }) => {
+export default function StoryList({ stories = [] }) {
+  const hasStories = Array.isArray(stories) && stories.length > 0;
+
   return (
-    <div>
-      <h2>Adoption Stories</h2>
-      {storyItem.length === 0 ? (
-        <p>No stories yet.</p>
-      ) : (
-        <ul className="storyList">
-          {storyItem.map((story, index) => (
-            <li key={index}>{story}</li>
+    <section aria-labelledby="stories-heading" style={{ textAlign: "center" }}>
+      <h2 id="stories-heading">Adoption Stories</h2>
+
+      {hasStories ? (
+        <ul className="storyList" aria-live="polite">
+          {stories.map((story, idx) => (
+            <li key={`${idx}-${story.slice(0, 24)}`}>{story}</li>
           ))}
         </ul>
+      ) : (
+        <p role="status" aria-live="polite">
+          No stories yet.
+        </p>
       )}
-    </div>
+    </section>
   );
-};
-
-export default StoryList;
+}
