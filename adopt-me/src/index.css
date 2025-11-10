@@ -24,88 +24,54 @@ body {
 }
 
 .footer {
-  width: 100%;
+  background-color: #00bbb2;
   height: 80px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  background-color: #00bbb2;
   padding: 30px 5%;
+  align-items: center;
 }
 
-.footer a {
-  text-decoration: none;
-  transition: transform 0.3s;
-  color: black;
-  width: 80px;
-  margin: 0 20px;
-  text-align: center;
-  display: block;
-  float: left;
-}
-
-.footer ul {
-  list-style: none;
+.footer-links,
+.footer-social {
   display: flex;
-  padding: 0;
-  margin: 0;
+  gap: 1.2rem;
+  list-style: none;
 }
 
-.footerListItem {
-  display: inline-block;
-  margin: 20px;
-  padding: 10px 15px;
+.footer-links a {
   text-decoration: none;
-  transition: all 0.3s ease 0s;
+  color: black;
+  padding: 8px 12px;
+  transition: 0.3s;
 }
 
-.footerListItem:hover {
-  transform: scale(1.5);
+.footer-links a:hover {
   background-color: #bf362c;
+  transform: scale(1.2);
+  border-radius: 4px;
 }
 
-.footerSocial {
+.footer-social svg {
   font-size: 1.6em;
-  transition: transform 0.3s ease-in-out;
-}
-
-#instagram {
-  margin: 0 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 #instagram:hover {
-  transform: scaleX(-1) scale(2);
+  transform: rotate(-360deg) scale(1.6);
   color: #cbf7f6;
-  animation: rotate-instagram 0.5s linear 3;
-  -webkit-animation: rotate-instagram 0.5s linear 3;
-}
-
-@keyframes rotate-instagram {
-  0% {
-    transform: rotate(0);
-  }
-  100% {
-    transform: rotate(-360deg);
-  }
-}
-
-#facebook {
-  margin: 0 20px;
 }
 
 #facebook:hover {
-  transform: scaleX(-1) scale(2);
+  transform: scaleX(-1) scale(1.6);
   color: #bf362c;
 }
 
-#twitter {
-  margin: 0 20px;
-}
-
 #twitter:hover {
+  transform: rotateY(180deg);
   color: #ffc78e;
   transition: 0.9s;
-  transform: rotateY(180deg);
 }
 
 .navbar {
