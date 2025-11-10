@@ -305,6 +305,27 @@ button:hover {
   background-color: var(--brand-teal);
 }
 
+/* Card link fills the card and gets a clear focus ring */
+.animalLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px; /* matches .animalCard */
+  outline: none;
+}
+.animalLink:focus-visible {
+  outline: 3px solid var(--brand-peach);
+  outline-offset: 3px;
+}
+
+/* Image sizing via CSS instead of width/height attrs */
+.animalPic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 /* Forms */
 .formContainer {
   background-color: var(--brand-peach);

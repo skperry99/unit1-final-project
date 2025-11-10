@@ -1,23 +1,31 @@
 import { Link } from "react-router-dom";
 
-const AvailableAnimal = ({ name, image, blurb }) => {
+function toParam(value = "") {
+  // URL-safe param for the route /adoption/:animalName
+  return encodeURIComponent(value.trim().toLowerCase());
+}
+
+export default function AvailableAnimal({ name, image, blurb }) {
+  const href = `/adoption/${toParam(name)}`;
+
   return (
     <article className="animalCard">
-      <Link to={`/AdoptionFormPage/${name}`}>
-        <div>
+      {/* Make the whole card the link for easier click/tap target */}
+      <Link to={href} className="animalLink" aria-label={`Adopt ${name}`}>
+        <figure style={{ margin: 0, textAlign: "center" }}>
           <img
             className="animalPic"
             src={image}
-            width="200px"
-            height="200px"
-            alt={`${name} picture`}
+            alt={`${name}`}
+            loading="lazy"
+            decoding="async"
           />
-          <h3> {name} </h3>
-          <h4> {blurb} </h4>
-        </div>
+          <figcaption>
+            <h3 style={{ marginTop: "8px" }}>{name}</h3>
+            <p style={{ marginTop: "4px" }}>{blurb}</p>
+          </figcaption>
+        </figure>
       </Link>
     </article>
   );
-};
-
-export default AvailableAnimal;
+}
