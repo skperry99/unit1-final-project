@@ -1,36 +1,40 @@
 import shelter2 from "../assets/images/shelter2.jpg";
 
-const AboutPage = (props) => {
+export default function AboutPage({ title = "About Us" }) {
   return (
-    <div className="aboutPage">
-      <img src={shelter2} width="700px" alt="Bark Avenue building" />
+    <section className="aboutPage" aria-labelledby="about-heading">
+      <div className="aboutMedia">
+        <img
+          src={shelter2}
+          alt="Exterior of Bark Avenue Rescue Kennel"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
       <div className="aboutText">
-        <h2>{props.title}</h2>
+        <h2 id="about-heading">{title}</h2>
+
         <p>
-          The shelter is home to a delightful mix of personalities. There's the
-          "energetic enthusiast" who can outrun a cheetah, the "lap-loving
-          legend" who thinks a bed in your room is "awesome," but sleeping in
-          the bed with you is "better", and the "mystery meowser" whose purrs
-          are as enchanting as they are puzzling. Special residents: Ralphie the
-          "Fire-Breathing Demon": Ralphie is a terror in a somewhat small
-          package. He may be a "whole jerk," but he's our jerk, and we believe
-          in him. Eddie the Terrible: He's cute, fluffy, and a "little bit
-          tubby," but don't be fooled. Eddie is socially awkward and has
-          specific sleeping demands that involve absolutely no crates.
+          The shelter is home to a delightful mix of personalities. There’s the
+          “energetic enthusiast” who can outrun a cheetah, the “lap-loving
+          legend” who thinks a bed in your room is awesome—but sleeping in the
+          bed with you is better—and the “mystery meowser” whose purrs are as
+          enchanting as they are puzzling. Special residents include Ralphie the
+          “Fire-Breathing Demon” (a handful, but our handful) and Eddie the
+          Terrible—cute, fluffy, a little tubby, socially awkward, and strongly
+          anti-crate.
         </p>
+
         <p>
-          Our mission is simple: to connect unique residents with equally unique
-          humans who understand that "rescued is our favorite breed". The
-          shelter focuses on finding the perfect match, even if it means
-          enduring a few "symphonies of protest" from Eddie. Ready to join the
-          chaos and cuddles? If you're looking for a companion who will keep you
-          entertained, occasionally challenge your sanity, and provide endless
-          love, you've come to the right place. Visit Bark Avenue Rescue Kennel,
+          Our mission is simple: connect unique residents with equally unique
+          humans. We focus on perfect matches—even if it means a few “symphonies
+          of protest” from Eddie. If you’re ready for a companion who will keep
+          you entertained, occasionally challenge your sanity, and always offer
+          love, you’ve come to the right place. Visit Bark Avenue Rescue Kennel
           and find your purr-fectly imperfect match!
         </p>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default AboutPage;
+}

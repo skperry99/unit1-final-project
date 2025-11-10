@@ -474,3 +474,44 @@ textarea::placeholder {
     padding: 12px 14px;
   }
 }
+
+/* Home */
+.homePage {
+  padding: 16px;
+}
+.homeHero img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 12px auto;
+}
+.homeText {
+  text-align: center;
+}
+
+/* About */
+.aboutPage {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  padding: 16px;
+}
+.aboutMedia img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+.aboutText > h2 {
+  margin-bottom: 8px;
+}
+
+/* Two-column layout on wider screens */
+@media (min-width: 900px) {
+  .aboutPage {
+    grid-template-columns: 1fr 1.2fr; /* image | text */
+  }
+}
