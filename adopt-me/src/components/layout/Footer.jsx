@@ -1,35 +1,36 @@
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fab } from "@fortawesome/free-brands-svg-icons";
+import { NavLink } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faSquareInstagram,
+  faFacebook,
+  faSquareXTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
-library.add(fab);
-
-const Footer = () => {
+export default function Footer() {
   return (
     <footer className="footer">
       <ul className="footer-social">
         <li>
-          <FontAwesomeIcon icon="fa-brands fa-square-instagram" />
+          <FontAwesomeIcon id="instagram" icon={faSquareInstagram} />
         </li>
         <li>
-          <FontAwesomeIcon icon="fa-brands fa-facebook" />
+          <FontAwesomeIcon id="facebook" icon={faFacebook} />
         </li>
         <li>
-          <FontAwesomeIcon icon="fa-brands fa-square-x-twitter" />
+          <FontAwesomeIcon id="twitter" icon={faSquareXTwitter} />
         </li>
       </ul>
 
       <ul className="footer-links">
-        <li><Link to="/careers">Careers</Link></li>
-        <li><Link to="/volunteer">Volunteer</Link></li>
+        <li>
+          <NavLink to="/careers">Careers</NavLink>
+        </li>
+        <li>
+          <NavLink to="/volunteer">Volunteer</NavLink>
+        </li>
       </ul>
 
-      <p className="footer-copy">
-        &copy; {new Date().getFullYear()} BARK
-      </p>
+      <p className="footer-copy">&copy; {new Date().getFullYear()} BARK</p>
     </footer>
   );
-};
-
-export default Footer;
+}

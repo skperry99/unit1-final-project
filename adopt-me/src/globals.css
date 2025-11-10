@@ -80,15 +80,29 @@ button:hover {
 
 /* Header */
 .header {
-  height: 200px;
+  height: clamp(140px, 25vh, 200px);
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex; /* keep flex */
+
+  /* center title */
+  display: flex;
   justify-content: center;
   align-items: center;
-  /* removed inline-block which disabled flex */
+
+  /* allow safe area on iOS */
+  padding-top: env(safe-area-inset-top);
+}
+
+/* readable title over images */
+.header h1 {
+  line-height: 1.1;
+  padding: 0.25em 0.6em;
+  border-radius: 8px;
+  background: color-mix(in oklab, black 25%, transparent);
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Navbar */
@@ -102,6 +116,10 @@ button:hover {
   top: 0;
   z-index: 100;
   overflow: hidden;
+
+  /* wrap on smaller screens so links don't squish */
+  flex-wrap: wrap;
+
   animation: slide-in 600ms ease-out both;
 }
 
@@ -111,6 +129,7 @@ button:hover {
   gap: 8px;
   padding: 0 12px;
   margin: 0;
+  flex-wrap: wrap;
 }
 
 .navListItem {
@@ -118,24 +137,41 @@ button:hover {
   font-size: 1.3em;
   padding: 10px 15px;
   text-decoration: none;
+  border-radius: 8px; /* so hover bg has rounded corners */
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
+
+.navListItem.cta { font-weight: 700; }
 
 .navListItem:hover {
   transform: scale(1.15);
   background-color: var(--brand-coral);
 }
 
+/* anchor normalization inside the nav; remove fixed width to avoid squish */
 .navbar a {
   text-decoration: none;
   color: var(--ink);
-  width: 80px;
-  margin: 0 10px;
+  /* width: 80px;  <-- remove this fixed width */
+  margin: 0 6px;
   text-align: center;
-  display: block; /* keep block */
-  /* removed float: left; not needed in flex */
+  display: block;
 }
 
+/* keyboard focus */
+.navbar a:focus-visible {
+  outline: 3px solid var(--brand-peach);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* if you switch Links -> NavLink, this gives a clear "active" route cue */
+.navbar a[aria-current="page"] {
+  background-color: var(--brand-coral);
+  color: white;
+}
+
+/* logo */
 #navLogo {
   margin-right: auto;
   margin-left: 3%;
@@ -154,6 +190,8 @@ button:hover {
   justify-content: space-between;
   padding: 24px 5%;
   align-items: center;
+  gap: 16px;
+  flex-wrap: wrap; /* keeps layout tidy on narrow screens */
 }
 
 .footer-links,
@@ -161,18 +199,21 @@ button:hover {
   display: flex;
   gap: 1.2rem;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .footer-links a {
   text-decoration: none;
   color: var(--ink);
   padding: 8px 12px;
-  transition: 0.2s ease;
-}
-.footer-links a:hover {
-  background-color: var(--brand-coral);
-  transform: scale(1.1);
   border-radius: 6px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  background-color: var(--brand-coral);
+  color: white;
+  transform: translateY(-1px);
 }
 
 .footer-social svg {
@@ -192,6 +233,18 @@ button:hover {
   transform: rotateY(180deg);
   color: var(--brand-peach);
   transition: 0.6s;
+}
+
+/* Motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .navbar {
+    animation: none;
+  }
+  #navLogo:hover,
+  .navListItem:hover,
+  .footer-links a:hover {
+    transform: none;
+  }
 }
 
 /* Cards & Lists */

@@ -1,7 +1,10 @@
-const Header = ({ title, imageUrl }) => {
+const Header = ({ title = "Bark Avenue Rescue Kennel", imageUrl }) => {
   return (
-    <header className="header" style={{ backgroundImage: `url(${imageUrl})` }}>
-      <h1 className="headerTitle">{title}</h1>
+    <header
+      className="header"
+      style={imageUrl ? { backgroundImage: `url(${imageUrl})` } : undefined}
+    >
+      <h1>{title}</h1>
     </header>
   );
 };

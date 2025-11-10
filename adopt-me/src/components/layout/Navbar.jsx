@@ -1,21 +1,42 @@
-import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.jpg";
+// src/components/layout/Navbar.jsx
+import { NavLink } from "react-router-dom";
+import { ROUTES } from "../../app/routes";
+import logo from "../../assets/images/logo.jpg";
 
-const Navbar = () => {
+export default function Navbar() {
   return (
     <nav className="navbar">
-      <img src={logo} id="navLogo" height={"60px"} alt="cat and dog logo" />
+      <NavLink to={ROUTES.HOME} end aria-label="Go to Home">
+        <img src={logo} id="navLogo" height="60" alt="BARK logo: cat and dog" />
+      </NavLink>
 
-      <ul className="navbar-links">
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-        <li><Link to="/animals">Animals</Link></li>
-        <li><Link to="/stories">Stories</Link></li>
+      <ul className="navbarList">
+        <li>
+          <NavLink className="navListItem" to={ROUTES.HOME} end>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="navListItem" to={ROUTES.ABOUT}>
+            About
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="navListItem" to={ROUTES.CONTACT}>
+            Contact
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="navListItem" to={ROUTES.ANIMALS}>
+            Animals
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className="navListItem" to={ROUTES.STORIES}>
+            Stories
+          </NavLink>
+        </li>
       </ul>
-
     </nav>
   );
-};
-
-export default Navbar;
+}
