@@ -15,9 +15,9 @@ export default function AnimalsPage({ title = "Available Animals" }) {
         style={{ listStyle: "none", padding: 0, margin: 0, width: "100%" }}
       >
         {hasAnimals ? (
-          animals.map(({ id, image, name, blurb }) => (
-            <li key={id} style={{ display: "contents" }}>
-              <AvailableAnimal image={image} name={name} blurb={blurb} />
+          animals.map((animal) => (
+            <li key={animal.id} style={{ display: "contents" }}>
+              <AvailableAnimal animal={animal} />
             </li>
           ))
         ) : (
