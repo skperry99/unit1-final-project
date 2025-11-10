@@ -141,7 +141,9 @@ button:hover {
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-.navListItem.cta { font-weight: 700; }
+.navListItem.cta {
+  font-weight: 700;
+}
 
 .navListItem:hover {
   transform: scale(1.15);
@@ -169,6 +171,29 @@ button:hover {
 .navbar a[aria-current="page"] {
   background-color: var(--brand-coral);
   color: white;
+}
+
+/* --- Mobile nav toggle --- */
+.navToggle {
+  display: none; /* hidden on desktop */
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  margin-left: auto; /* push to the right on small screens */
+  cursor: pointer;
+}
+.navToggle:focus-visible {
+  outline: 3px solid var(--brand-peach);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+.navToggleBar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 4px 0;
+  background: var(--ink);
+  border-radius: 2px;
 }
 
 /* logo */
@@ -397,5 +422,34 @@ textarea::placeholder {
   }
   h4 {
     font-size: 0.9rem;
+  }
+}
+/* Collapse the menu on narrow screens */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 8px 12px;
+  }
+  .navToggle {
+    display: block;
+  }
+
+  .navbarList {
+    display: none; /* hidden until opened */
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 0 12px;
+  }
+  .navbarList.isOpen {
+    display: flex;
+  }
+
+  .navListItem {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px 14px;
   }
 }
