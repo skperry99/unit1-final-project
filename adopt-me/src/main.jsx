@@ -1,7 +1,7 @@
 // src/main.jsx
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import "./styles/globals.css"; // moved
+import "./globals.css"; // moved
 import App from "./app/App.jsx";
 
 createRoot(document.getElementById("root")).render(
