@@ -2,7 +2,7 @@ import { useState } from "react";
 import StoryForm from "../components/StoryForm.jsx";
 import StoryList from "../components/StoryList.jsx";
 
-const Stories = () => {
+const StoriesPage = () => {
   const [allStories, setAllStories] = useState([
     `Chrissy was an amazing cat! -Tyler`,
     `Taz is a sweetheart! -Denise`,
@@ -19,4 +19,4 @@ const Stories = () => {
     </div>
   );
 };
-export default Stories;
+export default StoriesPage;

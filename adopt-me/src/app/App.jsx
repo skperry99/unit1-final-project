@@ -1,47 +1,67 @@
+// src/app/App.jsx
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "../pages/HomePage.jsx";
-import AboutPage from "../pages/AboutPage.jsx";
-import AnimalsPage from "../pages/AnimalsPage.jsx";
-import ContactPage from "../pages/ContactPage.jsx";
-import AdoptionFormPage from "../pages/AdoptionFormPage.jsx";
-import Careers from "./pages/Careers.jsx";
-import VolunteerPage from "../pages/VolunteerPage.jsx";
-import Stories from "../pages/StoriesPage.jsx";
-import Footer from "../components/layout/Footer.jsx";
-import Navbar from "../components/layout/Navbar.jsx";
-import Header from "../components/layout/Header.jsx";
-import banner from "./assets/images/banner-graphic.jpg";
-import "./App.css";
+import AppLayout from "../components/layout/AppLayout";
 
-function App() {
+const HomePage = lazy(() => import("../pages/HomePage.jsx"));
+const AboutPage = lazy(() => import("../pages/AboutPage.jsx"));
+const AnimalsPage = lazy(() => import("../pages/AnimalsPage.jsx"));
+const ContactPage = lazy(() => import("../pages/ContactPage.jsx"));
+const AdoptionFormPage = lazy(() => import("../pages/AdoptionFormPage.jsx"));
+const CareersPage = lazy(() => import("../pages/CareersPage.jsx"));
+const VolunteerPage = lazy(() => import("../pages/VolunteerPage.jsx"));
+const StoriesPage = lazy(() => import("../pages/StoriesPage.jsx"));
+const NotFoundPage = lazy(() => import("../pages/NotFoundPage.jsx"));
+
+export default function App() {
   return (
     <Router>
-      <Header title="Bark Avenue Rescue Kennel" imageUrl={banner} />
-      <Navbar />
+      <Suspense fallback={<div style={{ padding: 24 }}>Loading…</div>}>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route
+              index
+              element={
+                <HomePage title="Welcome to Bark Avenue Rescue Kennel" />
+              }
+            />
+            <Route path="about" element={<AboutPage title="About Us" />} />
+            <Route
+              path="animals"
+              element={<AnimalsPage title="Available Animals" />}
+            />
+            <Route
+              path="contact"
+              element={<ContactPage title="Contact Us" />}
+            />
 
-      <Routes>
-        <Route path="/" element={<HomePage title="Welcome to Bark Avenue Rescue Kennel" />} />
-        <Route path="/about" element={<AboutPage title="About Us" />} />
-        <Route path="/animals" element={<AnimalsPage title="Available Animals" />} />
-        <Route path="/contact" element={<ContactPage title="Contact Us" />} />
+            {/* Adoption */}
+            <Route path="adoption" element={<AdoptionFormPage />} />
+            <Route path="adoption/:animalName" element={<AdoptionFormPage />} />
 
-        {/* Adoption Form */}
-        <Route path="/adoption" element={<AdoptionFormPage />} />
-        <Route path="/adoption/:animalName" element={<AdoptionFormPage />} />
+            {/* Careers + Volunteering */}
+            <Route
+              path="careers"
+              element={
+                <CareersPage title="Join the Circus (of Cuddles and Chaos) at Bark Avenue!" />
+              }
+            />
+            <Route
+              path="volunteer"
+              element={<VolunteerPage title="Volunteer with Us" />}
+            />
 
-        {/* Careers + Volunteering */}
-        <Route path="/careers" element={
-          <Careers title="Join the Circus (of Cuddles and Chaos) at Bark Avenue!" />
-        } />
-        <Route path="/volunteer" element={<VolunteerPage title="Volunteer with Us" />} />
+            {/* Stories */}
+            <Route
+              path="stories"
+              element={<StoriesPage title="Adoption Stories" />}
+            />
 
-        {/* Stories */}
-        <Route path="/stories" element={<Stories title="Adoption Stories" />} />
-      </Routes>
-
-      <Footer />
+            {/* 404 */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </Router>
   );
 }
-
-export default App;
