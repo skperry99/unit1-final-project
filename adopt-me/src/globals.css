@@ -515,3 +515,43 @@ textarea::placeholder {
     grid-template-columns: 1fr 1.2fr; /* image | text */
   }
 }
+
+/* Careers & Volunteer spacing */
+.careersPage,
+.volunteerPage,
+.contactPage {
+  padding: 16px;
+}
+.careersPage h3,
+.volunteerPage h3 {
+  margin: 12px 0 6px;
+}
+
+/* Contact layout */
+.contactLayout {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  margin: 12px 0 20px;
+}
+.contactMedia img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+.logistics address,
+.logistics p {
+  margin: 8px 0;
+}
+.logistics a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Two-column contact on wide screens */
+@media (min-width: 900px) {
+  .contactLayout {
+    grid-template-columns: 1.2fr 1fr; /* image | details */
+  }
+}
