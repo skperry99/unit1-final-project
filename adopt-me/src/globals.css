@@ -284,6 +284,16 @@ textarea:focus-visible {
 }
 
 /* Cards & Lists */
+
+/* Grid wrapper for animal cards */
+.animals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+  align-items: stretch;
+}
+
 .animalsLayout {
   display: flex;
   flex-wrap: wrap;
@@ -298,15 +308,40 @@ textarea:focus-visible {
   flex-direction: column;
   align-items: center;
   max-width: 300px;
-  height: 430px;
+  /* height: 430px;  <-- remove this to avoid overflow */
+  min-height: 0;            /* allow content to define height */
   padding: 15px;
   margin-bottom: 10px;
   border: 5px solid;
   border-radius: 10px;
-  border-color: var(--ink); /* default border color */
-  transition: transform 0.2s ease, background-color 0.2s ease,
-    border-color 0.2s ease;
+  border-color: var(--ink);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;         /* safety */
 }
+
+/* Clamp long blurbs to ~4 lines with a graceful fallback */
+.animalCard p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Fallback (widest current support) */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+
+  /* Standard property (newer browsers) */
+  line-clamp: 4;
+}
+
+/* Prefer the standard when supported */
+@supports (line-clamp: 4) {
+  .animalCard p {
+    display: block;          /* no need for the WebKit flexbox hack */
+    -webkit-box-orient: initial;
+    -webkit-line-clamp: initial;
+  }
+}
+
 .animalCard a {
   text-decoration: none;
   color: var(--ink);
@@ -430,7 +465,14 @@ textarea::placeholder {
 }
 
 /* Responsive */
-/* (Removed an older duplicate 768px block that centered the navbar) */
+/* Scales down nicely in 260–300px columns */
+.animalPic {
+  width: 180px;            /* was 200px */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 @media (max-width: 480px) {
   body {
     font-size: 16px;
