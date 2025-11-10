@@ -1,0 +1,612 @@
+/* Reset-ish */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --brand-teal: #00bbb2;
+  --brand-teal-100: #cbf7f6;
+  --brand-coral: #bf362c;
+  --brand-peach: #ffc78e;
+  --ink: #000;
+}
+
+/* Base */
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: "Chewy", system-ui;
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--ink);
+  background-color: var(--brand-teal-100);
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4 {
+  text-align: center;
+}
+h1 {
+  font-size: 3.6em;
+  font-weight: 400;
+}
+h2 {
+  font-size: 2.5em;
+  font-weight: 400;
+}
+h3 {
+  font-size: 2em;
+  font-weight: 300;
+}
+h4 {
+  font-size: 0.9em;
+  font-weight: 400;
+}
+
+p {
+  line-height: 1.7;
+  margin: 0 auto;
+  padding: 12px 16px;
+  max-width: 72ch; /* readable width */
+}
+
+/* Images & buttons */
+img {
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+}
+button {
+  background-color: var(--brand-peach);
+  font-size: 0.95rem;
+  margin-left: 8px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+button:hover {
+  background-color: var(--brand-coral);
+  transform: translateY(-1px);
+}
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--brand-peach);
+  outline-offset: 2px;
+}
+
+/* Header */
+.header {
+  height: clamp(140px, 25vh, 200px);
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* center title */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* allow safe area on iOS */
+  padding-top: env(safe-area-inset-top);
+}
+
+/* readable title over images */
+.header h1 {
+  line-height: 1.1;
+  padding: 0.25em 0.6em;
+  border-radius: 8px;
+
+  /* Fallback */
+  background: rgba(0, 0, 0, 0.25);
+  /* Modern enhancement */
+  background: color-mix(in oklab, black 25%, transparent);
+
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--brand-teal);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+
+  /* wrap on smaller screens so links don't squish */
+  flex-wrap: wrap;
+
+  animation: slide-in 600ms ease-out both;
+}
+
+.navbarList {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  padding: 0 12px;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.navListItem {
+  display: inline-block;
+  font-size: 1.3em;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 8px; /* so hover bg has rounded corners */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.navListItem.cta {
+  font-weight: 700;
+}
+
+.navListItem:hover {
+  transform: scale(1.15);
+  background-color: var(--brand-coral);
+}
+
+/* anchor normalization inside the nav; remove fixed width to avoid squish */
+.navbar a {
+  text-decoration: none;
+  color: var(--ink);
+  /* width: 80px;  <-- removed fixed width */
+  margin: 0 6px;
+  text-align: center;
+  display: block;
+}
+
+/* keyboard focus */
+.navbar a:focus-visible {
+  outline: 3px solid var(--brand-peach);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* active route cue (NavLink sets aria-current="page") */
+.navbar a[aria-current="page"] {
+  background-color: var(--brand-coral);
+  color: white;
+}
+
+/* --- Mobile nav toggle --- */
+.navToggle {
+  display: none; /* hidden on desktop */
+  background: transparent;
+  border: 0;
+  padding: 8px;
+  margin-left: auto; /* push to the right on small screens */
+  cursor: pointer;
+}
+.navToggle:focus-visible {
+  outline: 3px solid var(--brand-peach);
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+.navToggleBar {
+  display: block;
+  width: 26px;
+  height: 3px;
+  margin: 4px 0;
+  background: var(--ink);
+  border-radius: 2px;
+}
+
+/* logo */
+#navLogo {
+  margin-right: auto;
+  margin-left: 3%;
+  padding: 5px;
+  transition: transform 0.6s ease, width 0.2s ease, height 0.2s ease;
+}
+#navLogo:hover {
+  transform: rotate(180deg) scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--brand-teal);
+  min-height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 24px 5%;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap; /* keeps layout tidy on narrow screens */
+}
+
+.footer-links,
+.footer-social {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--ink);
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.footer-links a:hover,
+.footer-links a:focus-visible {
+  background-color: var(--brand-coral);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.footer-social svg {
+  font-size: 1.6em;
+  cursor: pointer;
+  transition: 0.3s;
+}
+#instagram:hover {
+  transform: rotate(-360deg) scale(1.2);
+  color: var(--brand-teal-100);
+}
+#facebook:hover {
+  transform: scaleX(-1) scale(1.2);
+  color: var(--brand-coral);
+}
+#twitter:hover {
+  transform: rotateY(180deg);
+  color: var(--brand-peach);
+  transition: 0.6s;
+}
+
+/* Motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .navbar {
+    animation: none;
+  }
+  #navLogo:hover,
+  .navListItem:hover,
+  .footer-links a:hover {
+    transform: none;
+  }
+}
+
+/* Cards & Lists */
+
+/* Grid wrapper for animal cards */
+.animals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.animalsLayout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 4vw 10vw;
+}
+.animalCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 300px;
+  /* height: 430px;  <-- remove this to avoid overflow */
+  min-height: 0;            /* allow content to define height */
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 5px solid;
+  border-radius: 10px;
+  border-color: var(--ink);
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;         /* safety */
+}
+
+/* Clamp long blurbs to ~4 lines with a graceful fallback */
+.animalCard p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  /* Fallback (widest current support) */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+
+  /* Standard property (newer browsers) */
+  line-clamp: 4;
+}
+
+/* Prefer the standard when supported */
+@supports (line-clamp: 4) {
+  .animalCard p {
+    display: block;          /* no need for the WebKit flexbox hack */
+    -webkit-box-orient: initial;
+    -webkit-line-clamp: initial;
+  }
+}
+
+.animalCard a {
+  text-decoration: none;
+  color: var(--ink);
+}
+.animalCard:hover {
+  transform: scale(1.05);
+  border-color: var(--brand-teal);
+  background-color: var(--brand-teal);
+}
+
+/* Card link fills the card and gets a clear focus ring */
+.animalLink {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 10px; /* matches .animalCard */
+  outline: none;
+}
+.animalLink:focus-visible {
+  outline: 3px solid var(--brand-peach);
+  outline-offset: 3px;
+}
+
+/* Image sizing via CSS instead of width/height attrs */
+.animalPic {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Forms */
+.formContainer {
+  background-color: var(--brand-peach);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 720px;
+  margin: 30px auto;
+}
+label {
+  display: block;
+  margin-top: 8px;
+}
+input,
+textarea {
+  display: block;
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0;
+  border: 2px solid;
+  border-radius: 8px;
+}
+textarea {
+  height: 150px;
+  resize: none;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+/* Simple visibility helpers */
+.visible {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+
+/* Lists */
+.careersList,
+.volunteerList {
+  display: inline-block;
+  list-style-type: square;
+  margin: 0 auto;
+  padding: 8px 0;
+}
+.careersListItem,
+.volunteerListItem {
+  line-height: 1.5;
+  font-size: 0.95em;
+  margin: 8px 10px;
+  padding: 4px 6px;
+  font-weight: 300;
+}
+
+/* Stories */
+.storyList {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin: 4vw 10vw;
+  max-width: 80%;
+}
+.storyList li {
+  background-color: hsl(179 75% 84%);
+  border: 1px solid hsl(179 75% 80%);
+  width: 200px;
+  height: 100px;
+  padding: 15px;
+  border-radius: 10px;
+  font-style: italic;
+  font-weight: 300;
+  text-align: center;
+}
+
+/* Animations */
+@keyframes slide-in {
+  from {
+    transform: translateX(150vw) scaleX(2);
+  }
+  to {
+    transform: translateX(0) scaleX(1);
+  }
+}
+
+/* Responsive */
+/* Scales down nicely in 260–300px columns */
+.animalPic {
+  width: 180px;            /* was 200px */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+  h1 {
+    font-size: 2.2rem;
+  }
+  h2 {
+    font-size: 1.8rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  h4 {
+    font-size: 0.9rem;
+  }
+}
+/* Collapse the menu on narrow screens */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    padding: 8px 12px;
+  }
+  .navToggle {
+    display: block;
+  }
+
+  .navbarList {
+    display: none; /* hidden until opened */
+    flex-direction: column;
+    width: 100%;
+    padding: 8px 0 12px;
+  }
+  .navbarList.isOpen {
+    display: flex;
+  }
+
+  .navListItem {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px 14px;
+  }
+}
+
+/* Home */
+.homePage {
+  padding: 16px;
+}
+.homeHero img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 12px auto;
+}
+.homeText {
+  text-align: center;
+}
+
+/* About */
+.aboutPage {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  padding: 16px;
+}
+.aboutMedia img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+.aboutText > h2 {
+  margin-bottom: 8px;
+}
+
+/* Two-column layout on wider screens */
+@media (min-width: 900px) {
+  .aboutPage {
+    grid-template-columns: 1fr 1.2fr; /* image | text */
+  }
+}
+
+/* Careers & Volunteer spacing */
+.careersPage,
+.volunteerPage,
+.contactPage {
+  padding: 16px;
+}
+.careersPage h3,
+.volunteerPage h3 {
+  margin: 12px 0 6px;
+}
+
+/* Contact layout */
+.contactLayout {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+  margin: 12px 0 20px;
+}
+.contactMedia img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+.logistics address,
+.logistics p {
+  margin: 8px 0;
+}
+.logistics a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Two-column contact on wide screens */
+@media (min-width: 900px) {
+  .contactLayout {
+    grid-template-columns: 1.2fr 1fr; /* image | details */
+  }
+}
+
+.storiesPage {
+  padding: 16px;
+}
+.formContainer form > label {
+  font-weight: 600;
+}
+.storyList li {
+  text-align: center;
+}

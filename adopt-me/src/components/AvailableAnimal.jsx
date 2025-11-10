@@ -1,23 +1,29 @@
 import { Link } from "react-router-dom";
 
-const AvailableAnimal = ({ name, image, blurb }) => {
+export default function AvailableAnimal({ animal }) {
+  const { name, image, blurb, slug } = animal;
+
   return (
     <article className="animalCard">
-      <Link to={`/AdoptionFormPage/${name}`}>
-        <div>
+      <Link
+        to={`/adoption/${slug}`}
+        className="animalLink"
+        aria-label={`Adopt ${name}`}
+      >
+        <figure style={{ margin: 0, textAlign: "center" }}>
           <img
             className="animalPic"
             src={image}
-            width="200px"
-            height="200px"
-            alt={`${name} picture`}
+            alt={name}
+            loading="lazy"
+            decoding="async"
           />
-          <h3> {name} </h3>
-          <h4> {blurb} </h4>
-        </div>
+          <figcaption>
+            <h3 style={{ marginTop: "8px" }}>{name}</h3>
+            <p style={{ marginTop: "4px" }}>{blurb}</p>
+          </figcaption>
+        </figure>
       </Link>
     </article>
   );
-};
-
-export default AvailableAnimal;
+}

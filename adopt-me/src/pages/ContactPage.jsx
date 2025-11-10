@@ -1,26 +1,50 @@
 import shelter from "../assets/images/shelter.jpg";
 import Form from "../components/Form";
 
-const ContactPage = (props) => {
+export default function ContactPage({ title = "Contact Us" }) {
   return (
-    <div className="contactPage">
-      <h2>{props.title}</h2>
-      <img src={shelter} width="45%" alt="Bark Avenue building" />
-      <div className="logistics">
-        <p>
-          Address: 999 Doggone-It Street <br />
-          Anytown, NE 90210
-        </p>
-        <p>Phone number: 555.867.5309</p>
-        <p>
-          Monday to Friday: 12 to 6 p.m. <br />
-          Saturday: 10 a.m. to 5 p.m. <br />
-          Sunday: 12 to 4 p.m.
-        </p>
-      </div>
-      <Form />
-    </div>
-  );
-};
+    <section className="contactPage" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">{title}</h2>
 
-export default ContactPage;
+      <div className="contactLayout">
+        <figure className="contactMedia">
+          <img
+            src={shelter}
+            alt="Exterior of Bark Avenue Rescue Kennel"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <div className="logistics">
+          <address>
+            <strong>Address</strong>
+            <br />
+            999 Doggone-It Street
+            <br />
+            Anytown, NE 90210
+          </address>
+
+          <p>
+            <strong>Phone</strong>
+            <br />
+            <a href="tel:5558675309">555-867-5309</a>
+          </p>
+
+          <p>
+            <strong>Hours</strong>
+            <br />
+            Mon–Fri: 12–6 p.m.
+            <br />
+            Sat: 10 a.m.–5 p.m.
+            <br />
+            Sun: 12–4 p.m.
+          </p>
+        </div>
+      </div>
+
+      {/* Contact mode: Form shows message textarea when not adopting via route */}
+      <Form />
+    </section>
+  );
+}
