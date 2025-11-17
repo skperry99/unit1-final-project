@@ -1,21 +1,30 @@
-export default function StoryList({ stories = [] }) {
+// adopt-me/src/components/StoryList.jsx
+
+/**
+ * Presentational list of adoption stories.
+ * The parent page owns the heading and section semantics.
+ */
+export default function StoryList({
+  stories = [],
+  emptyMessage = "No stories yet.",
+}) {
   const hasStories = Array.isArray(stories) && stories.length > 0;
 
-  return (
-    <section aria-labelledby="stories-heading" style={{ textAlign: "center" }}>
-      <h2 id="stories-heading">Adoption Stories</h2>
+  if (!hasStories) {
+    return (
+      <p className="storyList__empty" role="status" aria-live="polite">
+        {emptyMessage}
+      </p>
+    );
+  }
 
-      {hasStories ? (
-        <ul className="storyList" aria-live="polite">
-          {stories.map((story, idx) => (
-            <li key={`${idx}-${story.slice(0, 24)}`}>{story}</li>
-          ))}
-        </ul>
-      ) : (
-        <p role="status" aria-live="polite">
-          No stories yet.
-        </p>
-      )}
-    </section>
+  return (
+    <ul className="storyList" aria-live="polite">
+      {stories.map((story, index) => (
+        <li key={index} className="storyList__item">
+          {story}
+        </li>
+      ))}
+    </ul>
   );
 }

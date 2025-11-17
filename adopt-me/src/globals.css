@@ -281,6 +281,14 @@ textarea:focus-visible {
   .footer-links a:hover {
     transform: none;
   }
+
+  .storyList__item {
+    transition: none;
+  }
+  .storyList__item:hover,
+  .storyList__item:focus-visible {
+    transform: none;
+  }
 }
 
 /* Cards & Lists */
@@ -309,14 +317,15 @@ textarea:focus-visible {
   align-items: center;
   max-width: 300px;
   /* height: 430px;  <-- remove this to avoid overflow */
-  min-height: 0;            /* allow content to define height */
+  min-height: 0; /* allow content to define height */
   padding: 15px;
   margin-bottom: 10px;
   border: 5px solid;
   border-radius: 10px;
   border-color: var(--ink);
-  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
-  overflow: hidden;         /* safety */
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+  overflow: hidden; /* safety */
 }
 
 /* Clamp long blurbs to ~4 lines with a graceful fallback */
@@ -336,9 +345,10 @@ textarea:focus-visible {
 /* Prefer the standard when supported */
 @supports (line-clamp: 4) {
   .animalCard p {
-    display: block;          /* no need for the WebKit flexbox hack */
+    display: block; /* no need for the WebKit flexbox hack */
     -webkit-box-orient: initial;
     -webkit-line-clamp: initial;
+    line-clamp: initial;
   }
 }
 
@@ -431,27 +441,97 @@ textarea::placeholder {
 }
 
 /* Stories */
+.storiesPage {
+  padding: 16px;
+}
+
+/* Page title – h2 is already centered globally, so just handle spacing */
+.storiesPage__title {
+  margin-bottom: 1rem;
+}
+
+/* Stories grid container */
 .storyList {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   align-content: center;
-  margin: 4vw 10vw;
-  max-width: 80%;
+
+  /* Center the grid and keep it from getting too wide */
+  margin: 4vw auto;
+  max-width: 900px;
+  padding: 0;
 }
-.storyList li {
-  background-color: hsl(179 75% 84%);
+
+/* Individual story “card” */
+.storyList__item {
+  background-color: hsl(179 75% 94%);
   border: 1px solid hsl(179 75% 80%);
-  width: 200px;
-  height: 100px;
-  padding: 15px;
   border-radius: 10px;
+
+  width: 230px;
+  min-height: 110px;
+  padding: 18px 18px 20px; /* a bit more breathing room */
+
   font-style: italic;
   font-weight: 300;
   text-align: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative; /* enable pseudo-elements */
+  overflow: hidden; /* keep decorations inside corners */
+
+  /* Soft card-y feel */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease,
+    background-color 0.18s ease;
+}
+
+/* Decorative quote mark in the top-left */
+.storyList__item::before {
+  content: "“";
+  position: absolute;
+  top: 6px;
+  left: 10px;
+
+  font-size: 1.8rem;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.14); /* very soft, just a hint */
+  pointer-events: none;
+}
+
+/* Decorative paw in the bottom-right */
+.storyList__item::after {
+  content: "🐾";
+  position: absolute;
+  bottom: 6px;
+  right: 10px;
+
+  font-size: 1.4rem;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Hover / focus effect for cards */
+.storyList__item:hover,
+.storyList__item:focus-visible {
+  background-color: hsl(179 75% 88%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.18);
+  transform: translateY(-2px);
+}
+
+/* Empty-state message */
+.storyList__empty {
+  text-align: center;
+  font-style: italic;
+  margin: 2rem auto 1.5rem;
+  max-width: 40ch;
 }
 
 /* Animations */
@@ -467,7 +547,7 @@ textarea::placeholder {
 /* Responsive */
 /* Scales down nicely in 260–300px columns */
 .animalPic {
-  width: 180px;            /* was 200px */
+  width: 180px; /* was 200px */
   height: 180px;
   object-fit: cover;
   border-radius: 10px;
@@ -490,6 +570,21 @@ textarea::placeholder {
     font-size: 0.9rem;
   }
 }
+/* Stories – tiny screens */
+@media (max-width: 480px) {
+  .storyList {
+    gap: 14px;
+    margin: 24px auto;
+    max-width: 100%;
+  }
+
+  .storyList__item {
+    width: 100%; /* full-width card on phones */
+    max-width: 320px; /* but don’t get too wide */
+    margin: 0 auto;
+  }
+}
+
 /* Collapse the menu on narrow screens */
 @media (max-width: 768px) {
   .navbar {
@@ -599,14 +694,4 @@ textarea::placeholder {
   .contactLayout {
     grid-template-columns: 1.2fr 1fr; /* image | details */
   }
-}
-
-.storiesPage {
-  padding: 16px;
-}
-.formContainer form > label {
-  font-weight: 600;
-}
-.storyList li {
-  text-align: center;
 }
